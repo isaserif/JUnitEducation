@@ -25,7 +25,7 @@ public class C06_RadioButton {
     @AfterClass
     public static void tearDown() throws InterruptedException {
         Thread.sleep(3000);
-        driver.close();
+      //  driver.close();
     }
     @Test
     public void test(){
@@ -36,7 +36,7 @@ public class C06_RadioButton {
         // c. Create an account buton’una basin
         driver.findElement(By.xpath("//a[text()='Yeni Hesap Oluştur']")).click();
         // d. Radio button elementlerini locate edin ve size uygun olani secin
-        driver.findElement(By.xpath("(//input[@type='radio'])[3]")).click();
+        driver.findElement(By.xpath("(//input[@type='radio'])[2]")).click();
     }
 
 

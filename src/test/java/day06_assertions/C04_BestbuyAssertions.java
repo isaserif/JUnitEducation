@@ -58,8 +58,6 @@ public class C04_BestbuyAssertions {
         WebElement fransizcaLinkin = driver.findElement(By.xpath("//*[text()='Français']"));
         Assert.assertTrue("fransızca linki görünmüyor", fransizcaLinkin.isDisplayed());
     }
-
-
 }
 
 

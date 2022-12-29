@@ -2,6 +2,7 @@ package day06_assertions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.*;
+import org.junit.runner.OrderWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -30,8 +31,7 @@ public class C01_BeforeClassAfterClass {
         driver.close();
     }
     @Test
-    @Before
-    public void test01(){
+    public void test1(){
         // 1.method'da amazon'a gidip, amazona gittigimizi test edin
         driver.get("https://www.amazon.com");
         String expectedKelime="Amazon";
@@ -43,7 +43,7 @@ public class C01_BeforeClassAfterClass {
         }
     }
     @Test
-    public void test02(){
+    public void test2(){
         // 2.method'da amazon'da nutella aratip, sonuclarin nutella icerdigini test edin
         WebElement aramaKutusu=driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
@@ -57,7 +57,7 @@ public class C01_BeforeClassAfterClass {
         }
     }
     @Test
-    public void test03(){
+    public void test3(){
         // 3.method'da nutella arama sonuc sayisinin 50'den fazla oldugunu test edin
         WebElement sonucYaziElementi= driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"));
         String sonucYazisiStr=sonucYaziElementi.getText();

@@ -43,7 +43,7 @@ public class C03_AssertionMethodlari {
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
         String expectedKelime = "Nutella";
-        WebElement sonucYaziElementi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"));
+        WebElement sonucYaziElementi = driver.findElement(By.cssSelector("div[class='a-section a-spacing-small a-spacing-top-small']"));
         String sonucYazisiStr = sonucYaziElementi.getText();
         Assert.assertTrue(sonucYazisiStr.contains(expectedKelime));
     }
@@ -53,9 +53,10 @@ public class C03_AssertionMethodlari {
         WebElement sonucYaziElementi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"));
         String sonucYazisiStr = sonucYaziElementi.getText();
         String[] sonucYazisiArr = sonucYazisiStr.split(" ");
+        System.out.println(sonucYazisiStr);
         String sonucAdediStr = sonucYazisiArr[2]; // "74"
         int actualSonucAdediInt = Integer.parseInt(sonucAdediStr);
         int expectedAramaSonucusayisi = 50;
-        Assert.assertTrue(actualSonucAdediInt>expectedAramaSonucusayisi);
+        Assert.assertTrue("actualysonuc expectedsonuxtan kücüktür",actualSonucAdediInt>expectedAramaSonucusayisi);
     }
     }

@@ -30,7 +30,7 @@ public class C05_CheckBox {
     @AfterClass
     public static void tearDown() throws InterruptedException {
         Thread.sleep(3000);
-        driver.close();
+       // driver.close();
     }
 @Test
     public void test_01(){
