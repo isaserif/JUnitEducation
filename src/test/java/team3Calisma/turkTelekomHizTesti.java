@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-
 import java.time.Duration;
 public class turkTelekomHizTesti {
 static WebDriver driver;
@@ -26,21 +25,15 @@ static     Actions action;
 }
 @Test
     public void test1() throws InterruptedException {
-
     driver.get("https://hiztesti.turktelekom.com.tr/");
-
     WebElement iframeElementi= driver.findElement(By.xpath("//iframe[@width='100%']"));
-
     driver.switchTo().frame(iframeElementi);
-
     driver.findElement(By.xpath("//span[text()='Başlat']")).click();
     Thread.sleep(40000);
-
    String dowlandTexti= driver.findElement(By.xpath("(//div[@class='number monochrome-primary'])[3]")).getText();
   double dowlantInt=Double.parseDouble(dowlandTexti);
   int expectedHiz=10;
   Assert.assertTrue("hız 10 in altındadır",dowlantInt>=expectedHiz);
-
     driver.switchTo().defaultContent();
     System.out.println("dışarda");
 }

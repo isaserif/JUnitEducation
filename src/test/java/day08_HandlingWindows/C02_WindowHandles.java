@@ -17,26 +17,21 @@ import java.util.Set;
 
 public class C02_WindowHandles {
     static WebDriver driver;
-
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
     }
-
     @After
     public void tearDown() throws InterruptedException {
         Thread.sleep(2000);
         driver.quit();
     }
-
     @Test
     public void test01() throws InterruptedException {
         String ilkSayfaWHD= driver.getWindowHandle();
-
         //● https://the-internet.herokuapp.com/windows adresine gidin.
         driver.get("https://the-internet.herokuapp.com/windows");
 
@@ -64,7 +59,6 @@ public class C02_WindowHandles {
                 ikinciSayfaWHD=eachWHD;
             }
         }
-
         //● Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu
         //dogrulayin.
         driver.switchTo().window(ikinciSayfaWHD);
