@@ -1,5 +1,4 @@
 package day09_Actions;
-
 import com.github.javafaker.Faker;
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,9 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilies.ReusableMethods;
 import utilies.TestBase;
-
-import javax.swing.*;
-
 public class C05_FormDoldurma extends TestBase {
     static Actions actions;
     static  Faker faker;
@@ -19,8 +15,6 @@ public class C05_FormDoldurma extends TestBase {
     public void test01() {
         // facebook.com sayfasina gidin
         driver.get("https://www.facebook.com");
-
-
         // yeni hesap olustur butonuna basin
         driver.findElement(By.xpath("(//a[@role='button'])[2]")).click();
         // ilgili alanlari faker kutuphanesinden degerlerle doldurup
@@ -38,8 +32,8 @@ public class C05_FormDoldurma extends TestBase {
                 .sendKeys(mailAdresi)
                 .sendKeys(Keys.TAB)
                 .sendKeys(faker.internet().password())
-                .sendKeys(Keys.TAB)
-                .sendKeys(Keys.TAB)
+                .sendKeys (Keys.TAB)
+                .sendKeys (Keys.TAB)
                 .sendKeys("23")
                 .sendKeys(Keys.TAB)
                 .sendKeys("Oct")
@@ -57,7 +51,7 @@ public class C05_FormDoldurma extends TestBase {
         Assert.assertTrue(hataMesajElementi.isDisplayed());
 
 
-        ReusableMethods.bekle(10);
+        ReusableMethods.bekle(5);
 
 
     }

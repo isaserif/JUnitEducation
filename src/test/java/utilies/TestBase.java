@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class TestBase {
-    protected WebDriver driver;
+    protected static WebDriver driver;
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -19,6 +19,6 @@ public class TestBase {
     }
     @After
     public void tearDown() throws InterruptedException {
-       // driver.quit();
+       driver.quit();
     }
 }
